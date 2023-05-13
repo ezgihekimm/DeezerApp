@@ -158,7 +158,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="j5r-99-cMZ">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="T8n-hM-FYT">
                                     <size key="itemSize" width="323" height="171"/>
@@ -167,8 +167,31 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="imageCell" id="h0C-Tg-Nmr" customClass="ImageCollectionViewCell" customModule="Appcent1" customModuleProvider="target">
+                                        <rect key="frame" x="97.666666666666671" y="0.0" width="198" height="149"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="aqi-gk-2Ax">
+                                            <rect key="frame" x="0.0" y="0.0" width="198" height="149"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="H28-5U-zWT">
+                                                    <rect key="frame" x="28" y="14" width="142" height="121"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="H28-5U-zWT" secondAttribute="bottom" constant="14" id="2xi-qq-HCY"/>
+                                                <constraint firstItem="H28-5U-zWT" firstAttribute="leading" secondItem="aqi-gk-2Ax" secondAttribute="leading" constant="28" id="E24-uN-5z6"/>
+                                                <constraint firstItem="H28-5U-zWT" firstAttribute="top" secondItem="aqi-gk-2Ax" secondAttribute="top" constant="14" id="mRE-dh-EOH"/>
+                                                <constraint firstAttribute="trailing" secondItem="H28-5U-zWT" secondAttribute="trailing" constant="28" id="oAU-2x-9Z1"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="198" height="149"/>
+                                        <connections>
+                                            <outlet property="artistImage" destination="H28-5U-zWT" id="opJ-G3-PEY"/>
+                                        </connections>
+                                    </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="albumCell" id="HZ5-le-eb1" customClass="AlbumCollectionViewCell" customModule="Appcent1" customModuleProvider="target">
-                                        <rect key="frame" x="35" y="0.0" width="323" height="171"/>
+                                        <rect key="frame" x="35" y="159" width="323" height="171"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="7vs-tm-VnI">
                                             <rect key="frame" x="0.0" y="0.0" width="323" height="171"/>
@@ -211,10 +234,11 @@
                         <viewLayoutGuide key="safeArea" id="kgf-i3-4rf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="kgf-i3-4rf" firstAttribute="trailing" secondItem="j5r-99-cMZ" secondAttribute="trailing" id="TCd-uR-OwY"/>
-                            <constraint firstItem="kgf-i3-4rf" firstAttribute="bottom" secondItem="j5r-99-cMZ" secondAttribute="bottom" id="dqi-m7-Yh4"/>
-                            <constraint firstItem="j5r-99-cMZ" firstAttribute="leading" secondItem="kgf-i3-4rf" secondAttribute="leading" id="g2J-g8-p3e"/>
-                            <constraint firstItem="j5r-99-cMZ" firstAttribute="top" secondItem="kgf-i3-4rf" secondAttribute="top" id="hHR-if-FtJ"/>
+                            <constraint firstItem="j5r-99-cMZ" firstAttribute="top" secondItem="kgf-i3-4rf" secondAttribute="top" id="Sps-zQ-Imd"/>
+                            <constraint firstItem="j5r-99-cMZ" firstAttribute="top" secondItem="kgf-i3-4rf" secondAttribute="top" id="aN8-7s-Uzb"/>
+                            <constraint firstAttribute="bottom" secondItem="j5r-99-cMZ" secondAttribute="bottom" id="hVW-Wu-4a9"/>
+                            <constraint firstItem="j5r-99-cMZ" firstAttribute="leading" secondItem="kgf-i3-4rf" secondAttribute="leading" id="jcl-45-Kec"/>
+                            <constraint firstItem="j5r-99-cMZ" firstAttribute="trailing" secondItem="kgf-i3-4rf" secondAttribute="trailing" id="pnB-o0-N7T"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Q5e-ek-tbZ"/>

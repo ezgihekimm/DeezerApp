@@ -9,11 +9,12 @@ import UIKit
 
 class AlbumViewController: UIViewController {
     
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     var artistID: Int = 0
     var artistName: String = ""
-    var image: String = ""
+    var currentImage: String = ""
     var albums = [Album]()
     
     override func viewDidLoad() {
@@ -59,6 +60,10 @@ class AlbumViewController: UIViewController {
 extension AlbumViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "albumCell", for: indexPath) as! AlbumCollectionViewCell
+        
+        let cell1 = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! ImageCollectionViewCell
+        
+        cell1.artistCover = currentImage
         
         cell.layer.cornerRadius = 15.0
         cell.layer.borderWidth = 2.0

@@ -100,7 +100,7 @@ extension ArtistsViewController: UICollectionViewDelegateFlowLayout {
                let indexPath = sender as? IndexPath {
                 destinationVC.artistID = artists[indexPath.row].id
                 destinationVC.artistName = artists[indexPath.row].name
-                destinationVC.image = artists[indexPath.row].picture
+                destinationVC.currentImage = artists[indexPath.row].picture
             }
         }
     }

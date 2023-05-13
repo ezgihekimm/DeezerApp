@@ -23,6 +23,7 @@
 		8DBFD77F2A0FF2A40072DBD9 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBFD77E2A0FF2A40072DBD9 /* AlbumViewController.swift */; };
 		8DBFD7832A0FF5250072DBD9 /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBFD7822A0FF5250072DBD9 /* AlbumCollectionViewCell.swift */; };
 		8DBFD7852A0FF7740072DBD9 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBFD7842A0FF7740072DBD9 /* AlbumModel.swift */; };
+		8DBFD7872A1037910072DBD9 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBFD7862A1037910072DBD9 /* ImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		8DBFD77E2A0FF2A40072DBD9 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
 		8DBFD7822A0FF5250072DBD9 /* AlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewCell.swift; sourceTree = "<group>"; };
 		8DBFD7842A0FF7740072DBD9 /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
+		8DBFD7862A1037910072DBD9 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		DD4EA4EBEA04B142B2A8E001 /* Pods-Appcent1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Appcent1.release.xcconfig"; path = "Target Support Files/Pods-Appcent1/Pods-Appcent1.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +102,7 @@
 				8D820A362A0EF4A9005297E6 /* CategoryCollectionViewCell.swift */,
 				8DBFD7722A0F13AE0072DBD9 /* ArtistCollectionViewCell.swift */,
 				8DBFD7822A0FF5250072DBD9 /* AlbumCollectionViewCell.swift */,
+				8DBFD7862A1037910072DBD9 /* ImageCollectionViewCell.swift */,
 				8D820A252A0EF445005297E6 /* Main.storyboard */,
 				8D820A2B2A0EF446005297E6 /* Assets.xcassets */,
 				8D820A2D2A0EF446005297E6 /* LaunchScreen.storyboard */,
@@ -235,6 +238,7 @@
 			files = (
 				8D820A242A0EF445005297E6 /* ViewController.swift in Sources */,
 				8DBFD7852A0FF7740072DBD9 /* AlbumModel.swift in Sources */,
+				8DBFD7872A1037910072DBD9 /* ImageCollectionViewCell.swift in Sources */,
 				8D820A372A0EF4A9005297E6 /* CategoryCollectionViewCell.swift in Sources */,
 				8D820A2A2A0EF445005297E6 /* Appcent1.xcdatamodeld in Sources */,
 				8D820A392A0EF587005297E6 /* ArtistsViewController.swift in Sources */,
