@@ -19,6 +19,8 @@ class ArtistsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = categoryName
+        
         callAPI()
             
         }
@@ -60,6 +62,10 @@ extension ArtistsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "artistCell", for: indexPath) as! ArtistCollectionViewCell
         
+        cell.layer.cornerRadius = 15.0
+        cell.layer.borderWidth = 2.0
+        cell.layer.borderColor = UIColor.gray.cgColor
+        
         let temp = artists[indexPath.item]
                 cell.configure(with: temp)
                 return cell
@@ -85,17 +91,7 @@ extension ArtistsViewController: UICollectionViewDelegateFlowLayout {
         return 10
     }
     
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
 }
+
 
 

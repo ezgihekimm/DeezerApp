@@ -6,6 +6,7 @@ class ViewController: UIViewController {
   
     @IBOutlet weak var collectionView: UICollectionView!
     
+    
     var categories = [Category]()
 
     override func viewDidLoad() {
@@ -56,8 +57,14 @@ extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCollectionViewCell
         
+        cell.layer.cornerRadius = 15.0
+        cell.layer.borderWidth = 2.0
+        cell.layer.borderColor = UIColor.gray.cgColor
+        
+        
         let category = categories[indexPath.item]
                 cell.configure(with: category)
+        
                 return cell
     }
 
@@ -67,6 +74,7 @@ extension ViewController: UICollectionViewDataSource {
 }
 
 extension ViewController: UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.bounds.width / 2 - 10
         let height = width
@@ -85,6 +93,9 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
         
         performSegue(withIdentifier: "goToArtist", sender: indexPath)
     }
+    
+
+
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToArtist" {
@@ -97,6 +108,8 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     }
 
 }
+
+
 
 
 
