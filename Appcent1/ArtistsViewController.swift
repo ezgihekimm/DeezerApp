@@ -20,7 +20,6 @@ class ArtistsViewController: UIViewController {
         super.viewDidLoad()
         
         self.title = categoryName
-        
         callAPI()
             
         }
@@ -28,7 +27,6 @@ class ArtistsViewController: UIViewController {
         guard let url = URL(string: "https://api.deezer.com/genre/\(categoryID)/artists") else {
             return
         }
-
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else {
                 return
@@ -36,11 +34,11 @@ class ArtistsViewController: UIViewController {
             
             do {
                 if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
-                   let genres = json["data"] as? [[String: Any]] {
-                    for genre in genres {
-                        if let id = genre["id"] as? Int,
-                           let name = genre["name"] as? String,
-                           let picture = genre["picture"] as? String {
+                   let temps = json["data"] as? [[String: Any]] {
+                    for temp in temps {
+                        if let id = temp["id"] as? Int,
+                           let name = temp["name"] as? String,
+                           let picture = temp["picture"] as? String {
                             let artistInfo = Artist(id: id, name: name, picture: picture)
                             self.artists.append(artistInfo)
                             print(artistInfo)
@@ -90,6 +88,23 @@ extension ArtistsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 10
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "goToAlbum", sender: indexPath)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToAlbum" {
+            if let destinationVC = segue.destination as? AlbumViewController,
+               let indexPath = sender as? IndexPath {
+                destinationVC.artistID = artists[indexPath.row].id
+                destinationVC.artistName = artists[indexPath.row].name
+                destinationVC.image = artists[indexPath.row].picture
+            }
+        }
+    }
+
     
 }
 

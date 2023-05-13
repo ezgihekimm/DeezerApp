@@ -11,21 +11,83 @@ class AlbumViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var artistID: Int = 0
+    var artistName: String = ""
+    var image: String = ""
+    var albums = [Album]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.title = artistName
+        callAPI()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func callAPI() {
+        guard let url = URL(string: "https://api.deezer.com/artist/\(artistID)/albums") else {
+            return
+        }
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data else {
+                return
+            }
+            do {
+                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                   let temps = json["data"] as? [[String: Any]] {
+                    for temp in temps {
+                        if let id = temp["id"] as? Int,
+                           let name = temp["title"] as? String,
+                           let date = temp["release_date"] as? String,
+                           let picture = temp["cover"] as? String {
+                            let albumInfo = Album(id: id, title: name, cover: picture, release_date: date)
+                            self.albums.append(albumInfo)
+                            print(albumInfo)
+                        }
+                    }
+                    DispatchQueue.main.async {
+                        self.collectionView.reloadData()
+                    }
+                }
+            } catch let error {
+                print("Error: \(error.localizedDescription)")
+            }
+        }
+        task.resume()
     }
-    */
-
 }
+
+extension AlbumViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "albumCell", for: indexPath) as! AlbumCollectionViewCell
+        
+        cell.layer.cornerRadius = 15.0
+        cell.layer.borderWidth = 2.0
+        cell.layer.borderColor = UIColor.gray.cgColor
+        
+        let temp = albums[indexPath.item]
+                cell.configure(with: temp)
+                return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        albums.count
+    }
+}
+
+extension AlbumViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.bounds.width 
+        let height = width/2
+        return CGSize(width: width, height: height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+
+    
+}
+

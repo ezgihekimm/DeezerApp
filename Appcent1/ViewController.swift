@@ -1,11 +1,8 @@
 import UIKit
 
-
 class ViewController: UIViewController {
-
-  
-    @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var collectionView: UICollectionView!
     
     var categories = [Category]()
 
@@ -14,20 +11,17 @@ class ViewController: UIViewController {
 
         collectionView.dataSource = self
         collectionView.delegate = self
-
+        
         callAPI()
     }
-
     func callAPI() {
         guard let url = URL(string: "https://api.deezer.com/genre") else {
             return
         }
-
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else {
                 return
             }
-            
             do {
                 if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
                    let genres = json["data"] as? [[String: Any]] {
@@ -48,11 +42,9 @@ class ViewController: UIViewController {
                 print("Error: \(error.localizedDescription)")
             }
         }
-
         task.resume()
     }
 }
-
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCollectionViewCell
@@ -61,10 +53,8 @@ extension ViewController: UICollectionViewDataSource {
         cell.layer.borderWidth = 2.0
         cell.layer.borderColor = UIColor.gray.cgColor
         
-        
         let category = categories[indexPath.item]
                 cell.configure(with: category)
-        
                 return cell
     }
 
@@ -72,7 +62,6 @@ extension ViewController: UICollectionViewDataSource {
         categories.count
     }
 }
-
 extension ViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -90,13 +79,9 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         performSegue(withIdentifier: "goToArtist", sender: indexPath)
     }
     
-
-
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToArtist" {
             if let destinationVC = segue.destination as? ArtistsViewController,
