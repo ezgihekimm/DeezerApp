@@ -9,39 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 1-->
-        <scene sceneID="Q9w-Ys-Vrc">
-            <objects>
-                <viewController id="r6z-Ze-wfM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="npu-py-YmD">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="yg6-m9-C8z"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="wey-C2-GuU"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2xb-Y9-1Wg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3347" y="-1286"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="IZA-0F-85P">
-            <objects>
-                <tabBarController id="xGZ-gO-nKq" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ll8-Au-fTE">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="r6z-Ze-wfM" kind="relationship" relationship="viewControllers" id="T6j-Je-avd"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MuK-VO-TGO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2502" y="-817"/>
-        </scene>
         <!--Kategoriler-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -116,11 +83,28 @@
                     <connections>
                         <outlet property="collectionView" destination="LM5-Uu-D8h" id="NQb-TM-F4L"/>
                         <segue destination="djJ-v9-cr2" kind="show" identifier="goToArtist" id="PUJ-cv-DAw"/>
+                        <segue destination="0kF-GO-Lov" kind="show" identifier="goToLike" id="Jgz-xd-gCk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3820.6106870229005" y="-27.464788732394368"/>
+        </scene>
+        <!--Like View Controller-->
+        <scene sceneID="oMw-jY-21C">
+            <objects>
+                <viewController storyboardIdentifier="like" id="0kF-GO-Lov" customClass="LikeViewController" customModule="Appcent1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nu0-Av-bwj">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="kh3-SU-q70"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="cxC-x2-RhG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Koa-zD-c0l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3821" y="755"/>
         </scene>
         <!--Artists View Controller-->
         <scene sceneID="6Hh-jL-0jU">

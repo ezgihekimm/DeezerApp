@@ -1,8 +1,9 @@
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController{
     
     @IBOutlet weak var collectionView: UICollectionView!
+    
     
     var categories = [Category]()
 
@@ -44,6 +45,11 @@ class ViewController: UIViewController {
         }
         task.resume()
     }
+    
+    @IBAction func tabBarItemTapped(_ sender: Any) {
+        performSegue(withIdentifier: "goToLike", sender: self)
+    }
+
 }
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -89,6 +95,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
                 destinationVC.categoryID = categories[indexPath.row].id
                 destinationVC.categoryName = categories[indexPath.row].name
             }
+            
         }
     }
 

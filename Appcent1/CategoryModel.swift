@@ -18,4 +18,5 @@ struct Category: Codable{
         self.name = name
         self.picture = picture
     }
+    
 }

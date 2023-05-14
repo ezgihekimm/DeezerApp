@@ -28,6 +28,7 @@
 		8DBFD78B2A10D7C50072DBD9 /* DetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBFD78A2A10D7C50072DBD9 /* DetailsCollectionViewCell.swift */; };
 		8DBFD78D2A10DA660072DBD9 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBFD78C2A10DA660072DBD9 /* DetailModel.swift */; };
 		8DBFD78F2A10FEC50072DBD9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBFD78E2A10FEC50072DBD9 /* ContentView.swift */; };
+		8DBFD7912A117F300072DBD9 /* LikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBFD7902A117F300072DBD9 /* LikeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		8DBFD78A2A10D7C50072DBD9 /* DetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCollectionViewCell.swift; sourceTree = "<group>"; };
 		8DBFD78C2A10DA660072DBD9 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		8DBFD78E2A10FEC50072DBD9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8DBFD7902A117F300072DBD9 /* LikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeViewController.swift; sourceTree = "<group>"; };
 		DD4EA4EBEA04B142B2A8E001 /* Pods-Appcent1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Appcent1.release.xcconfig"; path = "Target Support Files/Pods-Appcent1/Pods-Appcent1.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +118,7 @@
 				8DBFD78A2A10D7C50072DBD9 /* DetailsCollectionViewCell.swift */,
 				8DBFD78E2A10FEC50072DBD9 /* ContentView.swift */,
 				8D820A252A0EF445005297E6 /* Main.storyboard */,
+				8DBFD7902A117F300072DBD9 /* LikeViewController.swift */,
 				8D820A2B2A0EF446005297E6 /* Assets.xcassets */,
 				8D820A2D2A0EF446005297E6 /* LaunchScreen.storyboard */,
 				8D820A302A0EF446005297E6 /* Info.plist */,
@@ -259,6 +262,7 @@
 				8D820A392A0EF587005297E6 /* ArtistsViewController.swift in Sources */,
 				8DBFD7752A0F15840072DBD9 /* ArtistModel.swift in Sources */,
 				8D820A3B2A0EF652005297E6 /* CategoryModel.swift in Sources */,
+				8DBFD7912A117F300072DBD9 /* LikeViewController.swift in Sources */,
 				8DBFD77F2A0FF2A40072DBD9 /* AlbumViewController.swift in Sources */,
 				8D820A202A0EF445005297E6 /* AppDelegate.swift in Sources */,
 				8D820A222A0EF445005297E6 /* SceneDelegate.swift in Sources */,
