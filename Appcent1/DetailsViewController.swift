@@ -15,6 +15,7 @@ class DetailsViewController: UIViewController {
     
     var albumID: Int = 0
     var albumName: String = ""
+    var albumImage: String = ""
     var song = [Song]()
     var musicPlayer: AVPlayer?
 
@@ -42,7 +43,7 @@ class DetailsViewController: UIViewController {
                            let title = track["title"] as? String,
                            let duration = track["duration"] as? Int,
                            let preview = track["preview"] as? String {
-                            let newSong = Song(id: id, title: title, duration: duration, preview: preview)
+                            let newSong = Song(id: id, title: title, duration: duration, preview: preview, cover: self.albumImage)
                             self.song.append(newSong)
                         }
                     }
@@ -56,8 +57,6 @@ class DetailsViewController: UIViewController {
         }
         task.resume()
     }
-
-
 }
 extension DetailsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

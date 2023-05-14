@@ -18,7 +18,7 @@ class ArtistsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.title = categoryName
         callAPI()
             
@@ -104,8 +104,6 @@ extension ArtistsViewController: UICollectionViewDelegateFlowLayout {
             }
         }
     }
-
-    
 }
 
 

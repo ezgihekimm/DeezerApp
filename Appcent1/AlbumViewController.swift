@@ -103,6 +103,7 @@ extension AlbumViewController: UICollectionViewDelegateFlowLayout {
                let indexPath = sender as? IndexPath {
                 destinationVC.albumID = albums[indexPath.row].id
                 destinationVC.albumName = albums[indexPath.row].title
+                destinationVC.albumImage = albums[indexPath.row].cover
             }
         }
     }

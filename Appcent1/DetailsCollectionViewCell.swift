@@ -13,6 +13,7 @@ class DetailsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var PlayButton: UIButton!
+    @IBOutlet weak var heartImage: UIImageView!
     
     var playButtonAction: (() -> Void)?
     
@@ -25,9 +26,27 @@ class DetailsCollectionViewCell: UICollectionViewCell {
     @IBAction func playButtonTapped(_ sender: Any) {
         playButtonAction?()
     }
+    @objc func heartTapped(_ sender: UITapGestureRecognizer) {
+        if heartImage.image == UIImage(named: "emptyHeart") {
+            heartImage.image = UIImage(named: "fullHeart")
+        } else {
+            heartImage.image = UIImage(named: "emptyHeart")
+        }
+    }
+
     func configure(with song: Song){
         titleLabel.text = song.title
         timeLabel.text = formattedTime(duration: song.duration)
+        heartImage.image = UIImage(named: "emptyHeart")
+        
+        if let imageUrl = URL(string: song.cover) {
+               songImage.sd_setImage(with: imageUrl, placeholderImage: UIImage(named: "placeholder_image"))
+           }
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(heartTapped(_:)))
+        heartImage.isUserInteractionEnabled = true
+        heartImage.addGestureRecognizer(tapGesture)
+
     }
     
 }

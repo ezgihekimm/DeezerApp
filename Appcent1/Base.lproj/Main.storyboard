@@ -9,6 +9,39 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Item 1-->
+        <scene sceneID="Q9w-Ys-Vrc">
+            <objects>
+                <viewController id="r6z-Ze-wfM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="npu-py-YmD">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="yg6-m9-C8z"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="wey-C2-GuU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2xb-Y9-1Wg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3347" y="-1286"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="IZA-0F-85P">
+            <objects>
+                <tabBarController id="xGZ-gO-nKq" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ll8-Au-fTE">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="r6z-Ze-wfM" kind="relationship" relationship="viewControllers" id="T6j-Je-avd"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MuK-VO-TGO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2502" y="-817"/>
+        </scene>
         <!--Kategoriler-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -18,7 +51,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LM5-Uu-D8h">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qwD-Da-bHC">
                                     <size key="itemSize" width="330" height="297"/>
@@ -59,6 +92,15 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="lPh-3l-1MX"/>
                                 </connections>
                             </collectionView>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9wY-2d-uQz">
+                                <rect key="frame" x="0.0" y="720" width="393" height="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem systemItem="favorites" id="eyl-6d-Nlb"/>
+                                    <tabBarItem systemItem="more" id="pdm-lG-moH"/>
+                                </items>
+                            </tabBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -69,6 +111,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LM5-Uu-D8h" secondAttribute="bottom" id="yjl-jF-oUB"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="ODi-mU-VKo"/>
                     <navigationItem key="navigationItem" title="Kategoriler" id="VA6-fJ-bdl"/>
                     <connections>
                         <outlet property="collectionView" destination="LM5-Uu-D8h" id="NQb-TM-F4L"/>
@@ -88,7 +131,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uUH-Dd-HBi">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UBG-Fn-3XK">
                                     <size key="itemSize" width="196" height="202"/>
@@ -260,7 +303,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gYj-uj-hL4">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="I1c-bU-ole">
                                     <size key="itemSize" width="346" height="226"/>
@@ -295,7 +338,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KoL-Xc-LCA">
-                                                    <rect key="frame" x="167" y="132" width="171" height="35"/>
+                                                    <rect key="frame" x="167" y="132" width="100" height="35"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="Play"/>
@@ -303,11 +346,16 @@
                                                         <action selector="playButtonTapped:" destination="dMK-gh-gPg" eventType="touchUpInside" id="5QV-q8-cau"/>
                                                     </connections>
                                                 </button>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fwq-hX-he7">
+                                                    <rect key="frame" x="266" y="132" width="80" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="346" height="226"/>
                                         <connections>
                                             <outlet property="PlayButton" destination="KoL-Xc-LCA" id="ggt-e7-je5"/>
+                                            <outlet property="heartImage" destination="fwq-hX-he7" id="unK-eV-CBm"/>
                                             <outlet property="songImage" destination="JOA-Aw-rZO" id="1pl-mc-Lkn"/>
                                             <outlet property="timeLabel" destination="rcG-T1-TfQ" id="eQ2-Ld-zSY"/>
                                             <outlet property="titleLabel" destination="9wL-91-YWt" id="OGq-TM-huf"/>
@@ -338,11 +386,12 @@
             </objects>
             <point key="canvasLocation" x="6316.7938931297704" y="-27.464788732394368"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Item-->
         <scene sceneID="TAc-eT-zZV">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p6g-po-k9b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6C9-l1-fV4" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="6C9-l1-fV4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="KcP-6v-MAd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Jc-JG-pnf">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
