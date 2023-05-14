@@ -92,6 +92,21 @@ extension AlbumViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 10
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "goToDetails", sender: indexPath)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToDetails" {
+            if let destinationVC = segue.destination as? DetailsViewController,
+               let indexPath = sender as? IndexPath {
+                destinationVC.albumID = albums[indexPath.row].id
+                destinationVC.albumName = albums[indexPath.row].title
+            }
+        }
+    }
+
 
     
 }
