@@ -9,7 +9,6 @@ import UIKit
 
 class AlbumViewController: UIViewController {
     
-    
     @IBOutlet weak var collectionView: UICollectionView!
     
     var artistID: Int = 0
@@ -56,7 +55,6 @@ class AlbumViewController: UIViewController {
         task.resume()
     }
 }
-
 extension AlbumViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "albumCell", for: indexPath) as! AlbumCollectionViewCell
@@ -64,10 +62,9 @@ extension AlbumViewController: UICollectionViewDataSource {
         let cell1 = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! ImageCollectionViewCell
         
         cell1.artistCover = currentImage
-        
         cell.layer.cornerRadius = 15.0
         cell.layer.borderWidth = 2.0
-        cell.layer.borderColor = UIColor.gray.cgColor
+        cell.layer.borderColor = UIColor.lightGray.cgColor
         
         let temp = albums[indexPath.item]
                 cell.configure(with: temp)
@@ -107,8 +104,5 @@ extension AlbumViewController: UICollectionViewDelegateFlowLayout {
             }
         }
     }
-
-
-    
 }
 

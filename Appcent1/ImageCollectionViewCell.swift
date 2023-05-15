@@ -16,12 +16,10 @@ class ImageCollectionViewCell: UICollectionViewCell {
             updateUI()
         }
     }
-
     override func awakeFromNib() {
         super.awakeFromNib()
         updateUI()
     }
-    
     private func updateUI() {
         if let url = URL(string: artistCover) {
             URLSession.shared.dataTask(with: url) { data, response, error in
@@ -35,7 +33,5 @@ class ImageCollectionViewCell: UICollectionViewCell {
             }.resume()
         }
         print(artistCover)
-
     }
-
 }

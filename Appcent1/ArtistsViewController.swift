@@ -8,7 +8,6 @@
 import UIKit
 
 class ArtistsViewController: UIViewController {
-    
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -62,7 +61,7 @@ extension ArtistsViewController: UICollectionViewDataSource {
         
         cell.layer.cornerRadius = 15.0
         cell.layer.borderWidth = 2.0
-        cell.layer.borderColor = UIColor.gray.cgColor
+        cell.layer.borderColor = UIColor.lightGray.cgColor
         
         let temp = artists[indexPath.item]
                 cell.configure(with: temp)

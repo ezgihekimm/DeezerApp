@@ -1,10 +1,5 @@
-//
-//  DetailModel.swift
-//  Appcent1
-//
-//  Created by Ezgi Hekim on 14.05.2023.
-//
-
+// This is a struct representing a category object with its properties.
+// It conforms to the Codable protocol to support encoding and decoding from/to JSON.
 import Foundation
 
 struct Song: Codable {
@@ -14,12 +9,4 @@ struct Song: Codable {
     let duration: Int
     let preview: String
     let cover: String
-    
-    init(id: Int, title: String, duration:Int, preview:String, cover: String) {
-        self.id = id
-        self.title = title
-        self.duration = duration
-        self.preview = preview
-        self.cover = cover
-    }
 }
