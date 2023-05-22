@@ -12,7 +12,7 @@
 # Installation
 - Download or clone this project onto your computer.
 - Install the latest version of Xcode.
-- Open the folder where the project is located and double-click the MuzikUygulamasi.xcodeproj file to open it in Xcode.
+- Open the folder where the project is located and double-click the Appcent1.xcodeproj file to open it in Xcode.
 - Run the project in Xcode (cmd+R).
 
 # Usage
